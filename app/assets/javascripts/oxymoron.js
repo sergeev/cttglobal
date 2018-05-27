@@ -115,6 +115,23 @@ angular.module("oxymoron.config.states", [])
           }
         })
       
+        .state('root_path', {
+          url: '/',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['root_path'](params);
+          },
+          controller: 'GroupsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
         .state('new_user_session_path', {
           url: '/users/sign_in',
           
@@ -124,7 +141,7 @@ angular.module("oxymoron.config.states", [])
             
             return Routes['new_user_session_path'](params);
           },
-          controller: 'DeviseSessionsCtrl as ctrl',
+          controller: 'AuthSessionsCtrl as ctrl',
           resolve: {
             action: ['$stateParams', function ($stateParams) {
               return resolve('new', $stateParams)
@@ -175,7 +192,7 @@ angular.module("oxymoron.config.states", [])
             
             return Routes['cancel_user_registration_path'](params);
           },
-          controller: 'DeviseRegistrationsCtrl as ctrl',
+          controller: 'AuthRegistrationsCtrl as ctrl',
           resolve: {
             action: ['$stateParams', function ($stateParams) {
               return resolve('cancel', $stateParams)
@@ -192,7 +209,7 @@ angular.module("oxymoron.config.states", [])
             
             return Routes['new_user_registration_path'](params);
           },
-          controller: 'DeviseRegistrationsCtrl as ctrl',
+          controller: 'AuthRegistrationsCtrl as ctrl',
           resolve: {
             action: ['$stateParams', function ($stateParams) {
               return resolve('new', $stateParams)
@@ -209,10 +226,367 @@ angular.module("oxymoron.config.states", [])
             
             return Routes['edit_user_registration_path'](params);
           },
-          controller: 'DeviseRegistrationsCtrl as ctrl',
+          controller: 'AuthRegistrationsCtrl as ctrl',
           resolve: {
             action: ['$stateParams', function ($stateParams) {
               return resolve('edit', $stateParams)
+            }]
+          }
+        })
+      
+        .state('search_path', {
+          url: '/search',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['search_path'](params);
+          },
+          controller: 'SearchCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('groups_path', {
+          url: '/groups',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['groups_path'](params);
+          },
+          controller: 'GroupsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('new_group_path', {
+          url: '/groups/new',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['new_group_path'](params);
+          },
+          controller: 'GroupsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('new', $stateParams)
+            }]
+          }
+        })
+      
+        .state('edit_group_path', {
+          url: '/groups/:id/edit',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['edit_group_path'](params);
+          },
+          controller: 'GroupsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('edit', $stateParams)
+            }]
+          }
+        })
+      
+        .state('group_path', {
+          url: '/groups/:id',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['group_path'](params);
+          },
+          controller: 'GroupsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('show', $stateParams)
+            }]
+          }
+        })
+      
+        .state('themes_path', {
+          url: '/themes',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['themes_path'](params);
+          },
+          controller: 'ThemesCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('new_theme_path', {
+          url: '/themes/new',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['new_theme_path'](params);
+          },
+          controller: 'ThemesCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('new', $stateParams)
+            }]
+          }
+        })
+      
+        .state('edit_theme_path', {
+          url: '/themes/:id/edit',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['edit_theme_path'](params);
+          },
+          controller: 'ThemesCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('edit', $stateParams)
+            }]
+          }
+        })
+      
+        .state('theme_path', {
+          url: '/themes/:id',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['theme_path'](params);
+          },
+          controller: 'ThemesCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('show', $stateParams)
+            }]
+          }
+        })
+      
+        .state('news_index_path', {
+          url: '/news',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['news_index_path'](params);
+          },
+          controller: 'NewsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('new_news_path', {
+          url: '/news/new',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['new_news_path'](params);
+          },
+          controller: 'NewsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('new', $stateParams)
+            }]
+          }
+        })
+      
+        .state('edit_news_path', {
+          url: '/news/:id/edit',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['edit_news_path'](params);
+          },
+          controller: 'NewsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('edit', $stateParams)
+            }]
+          }
+        })
+      
+        .state('news_path', {
+          url: '/news/:id',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['news_path'](params);
+          },
+          controller: 'NewsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('show', $stateParams)
+            }]
+          }
+        })
+      
+        .state('posts_path', {
+          url: '/posts',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['posts_path'](params);
+          },
+          controller: 'PostsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('new_post_path', {
+          url: '/posts/new',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['new_post_path'](params);
+          },
+          controller: 'PostsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('new', $stateParams)
+            }]
+          }
+        })
+      
+        .state('edit_post_path', {
+          url: '/posts/:id/edit',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['edit_post_path'](params);
+          },
+          controller: 'PostsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('edit', $stateParams)
+            }]
+          }
+        })
+      
+        .state('post_path', {
+          url: '/posts/:id',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['post_path'](params);
+          },
+          controller: 'PostsCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('show', $stateParams)
+            }]
+          }
+        })
+      
+        .state('touch_users_path', {
+          url: '/users/touch',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['touch_users_path'](params);
+          },
+          controller: 'UsersCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('touch', $stateParams)
+            }]
+          }
+        })
+      
+        .state('metrics_users_path', {
+          url: '/users/metrics',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['metrics_users_path'](params);
+          },
+          controller: 'UsersCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('metrics', $stateParams)
+            }]
+          }
+        })
+      
+        .state('users_path', {
+          url: '/users',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['users_path'](params);
+          },
+          controller: 'UsersCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('index', $stateParams)
+            }]
+          }
+        })
+      
+        .state('user_path', {
+          url: '/users/:id',
+          
+          templateUrl: function(params) {
+            params['ng-view']='';
+            
+            
+            return Routes['user_path'](params);
+          },
+          controller: 'UsersCtrl as ctrl',
+          resolve: {
+            action: ['$stateParams', function ($stateParams) {
+              return resolve('show', $stateParams)
             }]
           }
         })
@@ -279,6 +653,141 @@ angular.module("oxymoron.services.resources", [])
     };
   }])
 
+  
+    .factory('Group', ['$resource', 'resourceDecorator', function ($resource, resourceDecorator) {
+      return resourceDecorator($resource('/groups/:id.json', {"id":"@id"}, {
+        "new": {
+          "method": "GET",
+          "url": "/groups/:id/new.json"
+        },
+        "edit": {
+          "method": "GET",
+          "url": "/groups/:id/edit.json"
+        },
+        "update": {
+          "method": "PUT"
+        },
+        "create": {
+          "method": "POST"
+        },
+        "destroy": {
+          "method": "DELETE"
+        }
+      }));
+    }])
+  
+    .factory('Theme', ['$resource', 'resourceDecorator', function ($resource, resourceDecorator) {
+      return resourceDecorator($resource('/themes/:id.json', {"id":"@id"}, {
+        "new": {
+          "method": "GET",
+          "url": "/themes/:id/new.json"
+        },
+        "edit": {
+          "method": "GET",
+          "url": "/themes/:id/edit.json"
+        },
+        "update": {
+          "method": "PUT"
+        },
+        "create": {
+          "method": "POST"
+        },
+        "destroy": {
+          "method": "DELETE"
+        }
+      }));
+    }])
+  
+    .factory('News', ['$resource', 'resourceDecorator', function ($resource, resourceDecorator) {
+      return resourceDecorator($resource('/news/:id.json', {"id":"@id"}, {
+        "new": {
+          "method": "GET",
+          "url": "/news/:id/new.json"
+        },
+        "edit": {
+          "method": "GET",
+          "url": "/news/:id/edit.json"
+        },
+        "update": {
+          "method": "PUT"
+        },
+        "create": {
+          "method": "POST"
+        },
+        "destroy": {
+          "method": "DELETE"
+        }
+      }));
+    }])
+  
+    .factory('Post', ['$resource', 'resourceDecorator', function ($resource, resourceDecorator) {
+      return resourceDecorator($resource('/posts/:id.json', {"id":"@id"}, {
+        "new": {
+          "method": "GET",
+          "url": "/posts/:id/new.json"
+        },
+        "edit": {
+          "method": "GET",
+          "url": "/posts/:id/edit.json"
+        },
+        "update": {
+          "method": "PUT"
+        },
+        "create": {
+          "method": "POST"
+        },
+        "destroy": {
+          "method": "DELETE"
+        }
+      }));
+    }])
+  
+    .factory('User', ['$resource', 'resourceDecorator', function ($resource, resourceDecorator) {
+      return resourceDecorator($resource('/users/:id.json', {"id":"@id"}, {
+        "new": {
+          "method": "GET",
+          "url": "/users/:id/new.json"
+        },
+        "edit": {
+          "method": "GET",
+          "url": "/users/:id/edit.json"
+        },
+        "update": {
+          "method": "PUT"
+        },
+        "create": {
+          "method": "POST"
+        },
+        "destroy": {
+          "method": "DELETE"
+        },
+        "touch": {
+          "url": "/users/touch.json",
+          "isArray": null,
+          "method": "GET"
+        },
+        "metrics": {
+          "url": "/users/metrics.json",
+          "isArray": null,
+          "method": "GET"
+        },
+        "rate": {
+          "url": "/users/:id/rate.json",
+          "isArray": null,
+          "method": "PUT"
+        },
+        "ban": {
+          "url": "/users/:id/ban.json",
+          "isArray": null,
+          "method": "PUT"
+        },
+        "unban": {
+          "url": "/users/:id/unban.json",
+          "isArray": null,
+          "method": "PUT"
+        }
+      }));
+    }])
   
 angular.module("oxymoron.services.sign", [])
   .service('Sign', ['$http', function ($http) {
@@ -553,7 +1062,7 @@ angular.module("oxymoron.directives", ['oxymoron.directives.fileupload', 'oxymor
 (function () {
   var Routes = function () {
     var self = this,
-        routes = {"rails_info_properties":{"defaults":{},"path":"/rails/info/properties"},"rails_info_routes":{"defaults":{},"path":"/rails/info/routes"},"rails_info":{"defaults":{},"path":"/rails/info"},"rails_mailers":{"defaults":{},"path":"/rails/mailers"},"new_user_session":{"defaults":{},"path":"/users/sign_in"},"user_session":{"defaults":{},"path":"/users/sign_in"},"destroy_user_session":{"defaults":{},"path":"/users/sign_out"},"new_user_password":{"defaults":{},"path":"/users/password/new"},"edit_user_password":{"defaults":{},"path":"/users/password/edit"},"user_password":{"defaults":{},"path":"/users/password"},"cancel_user_registration":{"defaults":{},"path":"/users/cancel"},"new_user_registration":{"defaults":{},"path":"/users/sign_up"},"edit_user_registration":{"defaults":{},"path":"/users/edit"},"user_registration":{"defaults":{},"path":"/users"}};
+        routes = {"rails_info_properties":{"defaults":{},"path":"/rails/info/properties"},"rails_info_routes":{"defaults":{},"path":"/rails/info/routes"},"rails_info":{"defaults":{},"path":"/rails/info"},"rails_mailers":{"defaults":{},"path":"/rails/mailers"},"root":{"defaults":{},"path":"/"},"new_user_session":{"defaults":{},"path":"/users/sign_in"},"user_session":{"defaults":{},"path":"/users/sign_in"},"destroy_user_session":{"defaults":{},"path":"/users/sign_out"},"new_user_password":{"defaults":{},"path":"/users/password/new"},"edit_user_password":{"defaults":{},"path":"/users/password/edit"},"user_password":{"defaults":{},"path":"/users/password"},"cancel_user_registration":{"defaults":{},"path":"/users/cancel"},"new_user_registration":{"defaults":{},"path":"/users/sign_up"},"edit_user_registration":{"defaults":{},"path":"/users/edit"},"user_registration":{"defaults":{},"path":"/users"},"uploads_avatar":{"defaults":{},"path":"/uploads/avatar"},"search":{"defaults":{},"path":"/search"},"groups":{"defaults":{},"path":"/groups"},"new_group":{"defaults":{},"path":"/groups/new"},"edit_group":{"defaults":{},"path":"/groups/:id/edit"},"group":{"defaults":{},"path":"/groups/:id"},"themes":{"defaults":{},"path":"/themes"},"new_theme":{"defaults":{},"path":"/themes/new"},"edit_theme":{"defaults":{},"path":"/themes/:id/edit"},"theme":{"defaults":{},"path":"/themes/:id"},"news_index":{"defaults":{},"path":"/news"},"new_news":{"defaults":{},"path":"/news/new"},"edit_news":{"defaults":{},"path":"/news/:id/edit"},"news":{"defaults":{},"path":"/news/:id"},"posts":{"defaults":{},"path":"/posts"},"new_post":{"defaults":{},"path":"/posts/new"},"edit_post":{"defaults":{},"path":"/posts/:id/edit"},"post":{"defaults":{},"path":"/posts/:id"},"touch_users":{"defaults":{},"path":"/users/touch"},"metrics_users":{"defaults":{},"path":"/users/metrics"},"rate_user":{"defaults":{},"path":"/users/:id/rate"},"ban_user":{"defaults":{},"path":"/users/:id/ban"},"unban_user":{"defaults":{},"path":"/users/:id/unban"},"users":{"defaults":{},"path":"/users"},"user":{"defaults":{},"path":"/users/:id"}};
 
     self.defaultParams = {}
 

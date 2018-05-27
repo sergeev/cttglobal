@@ -58,6 +58,7 @@ group :development, :test do
   gem 'jquery-rails', '~> 4.3', '>= 4.3.3'    # драйвер для jQuery-ujs
   gem 'rubocop', '~> 0.56.0'                  # автоматический инструмент проверки стиля кода Ruby
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'  # bootstrap-sass
+  gem 'pundit', '~> 1.1'                      # Объектно-ориентированная авторизация для приложений Rails
 end
 
 group :development do
@@ -86,6 +87,7 @@ group :development do
   gem 'jquery-rails', '~> 4.3', '>= 4.3.3'    # драйвер для jQuery-ujs
   gem 'rubocop', '~> 0.56.0'                  # автоматический инструмент проверки стиля кода Ruby
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'  # bootstrap-sass
+  gem 'pundit', '~> 1.1'                      # Объектно-ориентированная авторизация для приложений Rails
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
