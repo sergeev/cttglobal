@@ -39,6 +39,24 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  # Нужные гемы для разработки
+  gem 'rspec', '~> 3.7'                       # BDD for Ruby
+  gem 'active_model_serializers', '~> 0.10.7' # позволяет генерировать JSON объектно-ориентированным и управляемым Конвенцией образом.
+  gem 'pg', '~> 1.0'                          # база данных postgres
+  gem 'slim', '~> 3.0', '>= 3.0.9'            # шаблонизатор, замена стандартному erb
+  gem 'slim-rails', '~> 3.1', '>= 3.1.3'      # Обеспечивает настройки генератора, необходимые для Rails 3+ Для использования Slim
+  gem 'devise', '~> 4.4', '>= 4.4.3'          # авторизация посредствам devise
+  gem 'carrierwave', '~> 1.2', '>= 1.2.2'     # загрузка файлов
+  gem 'kaminari', '~> 1.1', '>= 1.1.1'        # разбиение на страницы (пагинатор)
+  gem 'oj', '~> 3.6'                          # самый быстрый в json парсер и сериализатор объекта.
+  gem 'warden', '~> 1.2', '>= 1.2.7'          # обеспечивает проверку подлинности для приложений
+  gem 'mini_magick', '~> 4.8'                 # Манипулирование изображениями с минимальным использованием памяти с помощью ImageMagick / GraphicsMagick
+  gem 'oxymoron', '~> 1.2', '>= 1.2.6'        # одностраничное приложение с новой архитектурой
+  gem 'simple_form', '~> 4.0', '>= 4.0.1'     # простые формы
+  gem 'jquery-rails', '~> 4.3', '>= 4.3.3'    # драйвер для jQuery-ujs
+  gem 'rubocop', '~> 0.56.0'                  # автоматический инструмент проверки стиля кода Ruby
+  gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'  # bootstrap-sass
 end
 
 group :development do
@@ -48,6 +66,24 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Нужные гемы для разработки
+  gem 'rspec', '~> 3.7'                       # BDD for Ruby
+  gem 'active_model_serializers', '~> 0.10.7' # позволяет генерировать JSON объектно-ориентированным и управляемым Конвенцией образом.
+  gem 'pg', '~> 1.0'                          # база данных postgres
+  gem 'slim', '~> 3.0', '>= 3.0.9'            # шаблонизатор, замена стандартному erb
+  gem 'slim-rails', '~> 3.1', '>= 3.1.3'      # Обеспечивает настройки генератора, необходимые для Rails 3+ Для использования Slim
+  gem 'devise', '~> 4.4', '>= 4.4.3'          # авторизация посредствам devise
+  gem 'carrierwave', '~> 1.2', '>= 1.2.2'     # загрузка файлов
+  gem 'kaminari', '~> 1.1', '>= 1.1.1'        # разбиение на страницы (пагинатор)
+  gem 'oj', '~> 3.6'                          # самый быстрый в json парсер и сериализатор объекта.
+  gem 'warden', '~> 1.2', '>= 1.2.7'          # обеспечивает проверку подлинности для приложений
+  gem 'mini_magick', '~> 4.8'                 # Манипулирование изображениями с минимальным использованием памяти с помощью ImageMagick / GraphicsMagick
+  gem 'oxymoron', '~> 1.2', '>= 1.2.6'        # одностраничное приложение с новой архитектурой
+  gem 'simple_form', '~> 4.0', '>= 4.0.1'     # простые формы
+  gem 'jquery-rails', '~> 4.3', '>= 4.3.3'    # драйвер для jQuery-ujs
+  gem 'rubocop', '~> 0.56.0'                  # автоматический инструмент проверки стиля кода Ruby
+  gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'  # bootstrap-sass
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
